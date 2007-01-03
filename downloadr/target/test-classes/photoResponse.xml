@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rsp stat="ok">
+<photo id="320058054" secret="39a6d1ca42" server="133" farm="1" dateuploaded="1165887217" isfavorite="0" license="0" rotation="0" originalsecret="39a6d1ca42" originalformat="jpg" views="7">
+	<owner nsid="25851484@N00" username="srirang" realname="Srinivasan Ranganathan" location="" />
+	<title>DSC01489</title>
+	<description />
+	<visibility ispublic="1" isfriend="0" isfamily="0" />
+	<dates posted="1165887217" taken="2006-11-18 18:32:21" takengranularity="0" lastupdate="1165887219" />
+	<permissions permcomment="3" permaddmeta="2" />
+	<editability cancomment="1" canaddmeta="1" />
+	<comments>0</comments>
+	<notes />
+	<tags>
+		<tag id="89420-320058054-214" author="25851484@N00" raw="friends">friends</tag>
+		<tag id="89420-320058054-130" author="25851484@N00" raw="family">family</tag>
+		<tag id="89420-320058054-7260" author="25851484@N00" raw="sydney">sydney</tag>
+		<tag id="89420-320058054-704" author="25851484@N00" raw="beach">beach</tag>
+	</tags>
+	<urls>
+		<url type="photopage">http://www.flickr.com/photos/srirang/320058054/</url>
+	</urls>
+</photo>
+</rsp>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rsp stat="ok">
+<photosets>
+	<photoset id="72157594416086046" primary="320058054" secret="39a6d1ca42" server="133" farm="1" photos="30">
+		<title>Sydney, December 2007</title>
+		<description/>
+	</photoset>
+	<photoset id="72157594375326184" primary="296753973" secret="9ff212506a" server="110" farm="1" photos="16">
+		<title>Wine Tour</title>
+		<description>Gippsland wine tour with Chelsy and her friends, Paul and Meredith, Shar on 11th Nov 06.</description>
+	</photoset>
+	<photoset id="72157594264563544" primary="231602902" secret="f6e3526005" server="87" farm="1" photos="22">
+		<title>Tom Haywood's Farewell Dinner</title>
+		<description>Tom Haywood's Farewell Dinner</description>
+	</photoset>
+	<photoset id="72057594120467932" primary="136795683" secret="6c25d8cd38" server="44" farm="1" photos="101">
+		<title>Coff's Harbour, Australia in April 2006</title>
+		<description>Tour to Coff's Harbour in New South Wales, Australia with Usha, Badri and friends</description>
+	</photoset>
+	<photoset id="72057594083314221" primary="113220221" secret="12fe4d2a80" server="38" farm="1" photos="11">
+		<title>nombu@sydney</title>
+		<description>Photos taken during karaya nombu by Usha in Sydney in Marhc 2006</description>
+	</photoset>
+	<photoset id="72057594081063612" primary="111848649" secret="57d6b1f5c7" server="56" farm="1" photos="100">
+		<title>Sydney, Australia March 2006</title>
+		<description>Sydney, Australia 12 March 2006</description>
+	</photoset>
+	<photoset id="72057594056813889" primary="93525665" secret="a9b1805cb4" server="21" farm="1" photos="73">
+		<title>Trichy - Jan 2006</title>
+		<description>Pics taken during the trip to Trichy and Gunaseelam after Usha's Wedding in Jan 2006</description>
+	</photoset>
+	<photoset id="72057594056808007" primary="93523586" secret="cabbeed825" server="18" farm="1" photos="57">
+		<title>Wedding - Day 2</title>
+		<description>Day 2 at Usha's Wedding</description>
+	</photoset>
+	<photoset id="72057594056803403" primary="93519724" secret="4d1c381a3a" server="28" farm="1" photos="30">
+		<title>Wedding - Day 1</title>
+		<description>Usha's Wedding, Day 1</description>
+	</photoset>
+	<photoset id="72057594056791938" primary="93509910" secret="af482b6630" server="39" farm="1" photos="16">
+		<title>Usha's Mehendhi</title>
+		<description>Pics taken during Usha's mehendhi</description>
+	</photoset>
+	<photoset id="72057594050247595" primary="88175169" secret="fc36c83f9b" server="14" farm="1" photos="35">
+		<title>Mrithul's 1st Birthday</title>
+		<description>Photos taken on Mrithul's 1st Birthday at Kaattupaakkam on 17th January 2006.</description>
+	</photoset>
+	<photoset id="72057594048077770" primary="86379202" secret="bafedd2280" server="38" farm="1" photos="203">
+		<title>Usha's Wedding</title>
+		<description>Photos taken before, during and after Usha's wedding</description>
+	</photoset>
+</photosets>
+</rsp>
