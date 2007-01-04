@@ -17,12 +17,16 @@ public class FlickrDownloadr {
 
 	private FlickrService flickrService;
 
-	public StringBuffer downloadFlickr(String flickrUsername, String targetDirectory) throws IOException {
+	public FlickrDownloadr(FlickrService flickrService) {
+		this.flickrService = flickrService;
+	}
+
+	public String downloadFlickr(String flickrUsername, String targetDirectory) throws IOException {
 		URL photosPageUrl = new URL("http://www.flickr.com/photos/" + flickrUsername);
 		return this.downloadFlickr(photosPageUrl, targetDirectory);
 	}
 
-	public StringBuffer downloadFlickr(URL photosPageUrl, String relativeTargetDirectory) throws IOException {
+	public String downloadFlickr(URL photosPageUrl, String relativeTargetDirectory) throws IOException {
 		StringBuffer buffer = new StringBuffer();
 		buffer.append("Looking up url :" + photosPageUrl);
 		System.out.println("\nLooking up url :" + photosPageUrl);
@@ -38,12 +42,12 @@ public class FlickrDownloadr {
 
 		String targetDirectory = new File(relativeTargetDirectory).getAbsolutePath();
 		for (Photoset photoset : photosets) {
-			System.out.println("Photoset: " + photoset.getTitle() + " with " + photoset.getPhotos().size() + " photos");
-			buffer.append("\nPhotoset: " + photoset.getTitle() + " with " + photoset.getPhotos().size() + " photos");
+			System.out.println("Photoset: " + photoset.getTitle() + " with " + photoset.getPhotoIds().size() + " photos");
+			buffer.append("\nPhotoset: " + photoset.getTitle() + " with " + photoset.getPhotoIds().size() + " photos");
 			String photosetDirectory = targetDirectory + File.separator + photoset.getTitle();
 			new File(photosetDirectory).mkdirs();
-			for (Photo emptyPhoto : photoset.getPhotos()) {
-				Photo photo = flickrService.getPhoto(emptyPhoto.getId());
+			for (String photoId : photoset.getPhotoIds()) {
+				Photo photo = flickrService.getPhoto(photoId);
 				String targetFilename = photosetDirectory + File.separator + photo.getTitle() + ".jpg";
 				if (!new OverwritePhotoPolicy().shouldOverwrite(photo, targetFilename)) {
 					System.out.println(photo.getTitle() + " already exisits...download skipped");
@@ -53,10 +57,6 @@ public class FlickrDownloadr {
 				buffer.append(new PhotoDownloader().downloadOriginalPhoto(photo, targetFilename));
 			}
 		}
-		return buffer;
-	}
-
-	public void setFlickrService(FlickrService flickrService) {
-		this.flickrService = flickrService;
+		return buffer.toString();
 	}
 }

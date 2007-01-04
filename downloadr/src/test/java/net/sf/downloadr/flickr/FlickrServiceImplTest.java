@@ -21,21 +21,16 @@ public class FlickrServiceImplTest extends AbstractDependencyInjectionSpringCont
 		Photoset firstPhotoset = photosets.get(1);
 		assertEquals("Sydney, December 2007", firstPhotoset.getTitle());
 		assertEquals("72157594416086046", firstPhotoset.getId());
-		assertEquals(30, firstPhotoset.getPhotos().size());
+		assertEquals(30, firstPhotoset.getPhotoIds().size());
 	}
 
 	public void testGetPhotosInASet() {
-		List<Photo> photos = flickrServiceImpl.getPhotos("72157594416086046");
+		List<String> photos = flickrServiceImpl.getPhotoIds("72157594416086046");
 		assertFalse(photos == null || photos.isEmpty());
 		assertEquals(30, photos.size());
 
-		Photo firstPhoto = photos.get(0);
-		assertEquals("320058054", firstPhoto.getId());
-		assertEquals("39a6d1ca42", firstPhoto.getSecret());
-
-		Photo secondPhoto = photos.get(1);
-		assertEquals("320057990", secondPhoto.getId());
-		assertEquals("f76b2422e3", secondPhoto.getSecret());
+		assertEquals("320058054", photos.get(0));
+		assertEquals("320057990", photos.get(1));
 	}
 
 	public void testGetPhoto() {

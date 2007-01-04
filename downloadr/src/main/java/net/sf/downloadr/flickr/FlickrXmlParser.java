@@ -42,12 +42,12 @@ public class FlickrXmlParser {
 		return photo;
 	}
 
-	public static List<Photo> extractPhotos(Response photosResponse) {
+	public static List<String> extractPhotoIds(Response photosResponse) {
 		NodeList photosList = photosResponse.getResult().getElementsByTagName("photo");
-		List<Photo> photos = new ArrayList<Photo>(photosList.getLength());
+		List<String> photos = new ArrayList<String>(photosList.getLength());
 		for (int i = 0; i < photosList.getLength(); i++) {
 			Element photoElement = (Element)photosList.item(i);
-			photos.add(new Photo(photoElement.getAttribute("id"), getChildValue(photoElement, "title"), getChildValue(photoElement, "description"), photoElement.getAttribute("secret"), null));
+			photos.add(photoElement.getAttribute("id"));
 		}
 		return photos;
 	}

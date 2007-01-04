@@ -12,7 +12,7 @@ public class Photoset {
 	private String description;
 	private String secret;
 
-	private Collection<Photo> photos = new LinkedList<Photo>();
+	private Collection<String> photoIds = new LinkedList<String>();
 
 	public Photoset(String id, String title, String description, String secret) {
 		super();
@@ -22,8 +22,8 @@ public class Photoset {
 		this.secret = secret;
 	}
 
-	void providePhotos(Collection<Photo> photos) {
-		this.photos = photos;
+	void providePhotoIds(Collection<String> photoIds) {
+		this.photoIds = photoIds;
 	}
 
 	@Override
@@ -47,7 +47,7 @@ public class Photoset {
 		return this.secret;
 	}
 
-	public Collection<Photo> getPhotos() {
-		return Collections.unmodifiableCollection(this.photos);
+	public Collection<String> getPhotoIds() {
+		return Collections.unmodifiableCollection(this.photoIds);
 	}
 }

@@ -8,8 +8,6 @@ import javax.xml.parsers.DocumentBuilderFactory;
 
 import junit.framework.TestCase;
 
-import org.apache.commons.collections.Closure;
-import org.apache.commons.collections.CollectionUtils;
 import org.w3c.dom.Document;
 
 public class FlickrXmlParserTest extends TestCase {
@@ -60,29 +58,10 @@ public class FlickrXmlParserTest extends TestCase {
 	}
 
 	public void testParsePhotosResponse() {
-		List<Photo> photos = FlickrXmlParser.extractPhotos(photosResponse);
-		assertEquals(30, photos.size());
-
-		Photo firstPhoto = photos.get(0);
-		assertEquals("320058054", firstPhoto.getId());
-		assertEquals("", firstPhoto.getDescription());
-		assertEquals("", firstPhoto.getTitle());
-		assertEquals("39a6d1ca42", firstPhoto.getSecret());
-
-		Photo secondPhoto = photos.get(1);
-		assertEquals("320057990", secondPhoto.getId());
-		assertEquals("", secondPhoto.getDescription());
-		assertEquals("", secondPhoto.getTitle());
-		assertEquals("f76b2422e3", secondPhoto.getSecret());
-
-		CollectionUtils.forAllDo(photos, new Closure() {
-			public void execute(Object arg) {
-				Photo photo = (Photo)arg;
-				assertNotNull(photo.getId());
-				assertNotNull(photo.getTitle());
-				assertNotNull(photo.getSecret());
-			}
-		});
+		List<String> photoIds = FlickrXmlParser.extractPhotoIds(photosResponse);
+		assertEquals(30, photoIds.size());
+		assertEquals("320058054", photoIds.get(0));
+		assertEquals("320057990", photoIds.get(1));
 	}
 
 	public void testParseUserLookupResponse() {

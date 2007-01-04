@@ -16,18 +16,18 @@ public class FlickrServiceImpl implements FlickrService {
 		}
 		List<Photoset> photosets = FlickrXmlParser.extractPhotosets(response);
 		for (Photoset photoset : photosets) {
-			photoset.providePhotos(getPhotos(photoset.getId()));
+			photoset.providePhotoIds(getPhotoIds(photoset.getId()));
 		}
 		return photosets;
 	}
 
-	List<Photo> getPhotos(String photosetId) {
+	List<String> getPhotoIds(String photosetId) {
 		ServiceArgument userIdArg = new ServiceArgument("photoset_id", photosetId);
 		Response response = transport.callMethod("flickr.photosets.getPhotos", Arrays.asList(new ServiceArgument[] {userIdArg}));
 		if (response.isInError()) {
 			throw new FlickrServiceException("Error getting photos in photoset for user", response);
 		}
-		return FlickrXmlParser.extractPhotos(response);
+		return FlickrXmlParser.extractPhotoIds(response);
 	}
 
 	public Photo getPhoto(String photoId) throws FlickrServiceException {
