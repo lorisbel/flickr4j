@@ -1,0 +1,1 @@
+A java class library to access flickr web services
